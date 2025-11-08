@@ -1,0 +1,24 @@
+<dds>
+  <qos_library name="ChatterLibrary">
+    <qos_profile name="Chatter" is_default_qos="true">
+
+      <participant_qos>
+          <property>
+              <value>
+                  <element>
+                      <name>dds.license.license_file</name>
+                      <value>C:\Program Files\rti_connext_dds-7.5.0\rti_license.dat</value>
+                  </element>
+              </value>
+          </property>
+      </participant_qos>
+
+
+      <datawriter_qos>
+        <reliability>
+          <kind>RELIABLE_RELIABILITY_QOS</kind>
+        </reliability>
+      </datawriter_qos>
+    </qos_profile>
+  </qos_library>
+</dds>

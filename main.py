@@ -1,0 +1,28 @@
+from utils import ChatShell
+
+def main():
+
+    intro_msg = """ 
+    THIS IS A CLI IMPLEMENTATION OF COE 427 ASSIGNMENT 1. 
+    IMPLEMENTING A CHATTING APP USING RTI DDS CONNEXT.
+    THE MAIN ABSTRACTED CLASSES FOR THE CHAT INCLUDES CHATTERS, GROUPS, AND MESSAGES.
+    A CHATTER CAN CHAT WITH ANY OTHER CHATTER IN GROUPS THEY EXIST TOGETHER IN.
+                    
+    THE CLI PROVIDES ACCESS TO CLASS INSTANCES LIFECYCLE AND MOST NECESSARY CRUD FEATURES.
+
+    TO VIEW ALL POSSIBLE COMMANDS, TYPE "help" OR "h".
+    """
+
+    ChatShell().cmdloop(intro = intro_msg)
+
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+struct Message{
+    @key long msg_id;
+    long sender_id;
+    string<2048> msg;
+};
+
+struct Chatter{
+    @key long user_id;
+    string<64> username;
+    sequence<long> participating_groups_id;
+
+};
+
+struct Group{
+    @key long group_id;
+    string<64> group_name;
+    sequence<long> participating_chatters_id;
+};
