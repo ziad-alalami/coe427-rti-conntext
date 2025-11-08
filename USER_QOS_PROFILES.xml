@@ -3,22 +3,49 @@
     <qos_profile name="Chatter" is_default_qos="true">
 
       <participant_qos>
-          <property>
-              <value>
-                  <element>
-                      <name>dds.license.license_file</name>
-                      <value>C:\Program Files\rti_connext_dds-7.5.0\rti_license.dat</value>
-                  </element>
-              </value>
-          </property>
+        <property>
+          <value>
+            <element>
+              <name>dds.license.license_file</name>
+              <value>C:\Program Files\rti_connext_dds-7.5.0\rti_license.dat</value>
+            </element>
+          </value>
+        </property>
       </participant_qos>
 
-
       <datawriter_qos>
+        <!-- Reliable so no message loss -->
         <reliability>
           <kind>RELIABLE_RELIABILITY_QOS</kind>
         </reliability>
+
+        <!-- Keep data for late joiners (offline participants) -->
+        <durability>
+          <kind>TRANSIENT_LOCAL_DURABILITY_QOS</kind>
+        </durability>
+
+        <!-- Keep messages in memory until explicitly replaced -->
+        <history>
+          <kind>KEEP_ALL_HISTORY_QOS</kind>
+        </history>
+
+        <!--how much data to store per instance -->
+        <resource_limits>
+          <max_samples>100</max_samples>
+          <max_instances>10</max_instances>
+          <max_samples_per_instance>100</max_samples_per_instance>
+        </resource_limits>
       </datawriter_qos>
+
+      <datareader_qos>
+        <reliability>
+          <kind>RELIABLE_RELIABILITY_QOS</kind>
+        </reliability>
+        <durability>
+          <kind>TRANSIENT_LOCAL_DURABILITY_QOS</kind>
+        </durability>
+      </datareader_qos>
+
     </qos_profile>
   </qos_library>
 </dds>
