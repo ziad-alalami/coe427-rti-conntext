@@ -1,6 +1,8 @@
 # DDS Chat System
   
-A distributed, real-time group chat application built on **RTI Connext DDS 7.5.0** middleware, implementing a publish-subscribe architecture for multi-user communication across processes and machines.  
+A distributed, real-time group chat application built on **RTI Connext DDS 7.5.0** middleware, implementing a publish-subscribe architecture for multi-user communication across processes and machines.
+
+[CHECK THIS FOR A FULL DOCUMENTATION ON EVERYTHING AND AN AI AGENT TO EXPLAIN EVERYTHING FOR YOU](https://deepwiki.com/ziad-alalami/coe427-rti-conntext)
   
 ## Overview
   
@@ -170,3 +172,4 @@ The `ChatterLibrary` profile defines critical DDS behaviors:
 ```  
 
   
+
