@@ -19,21 +19,23 @@
           <kind>RELIABLE_RELIABILITY_QOS</kind>
         </reliability>
 
-        <!-- Keep data for late joiners (offline participants) -->
+        <!-- Keep data for late joiners -->
         <durability>
           <kind>TRANSIENT_LOCAL_DURABILITY_QOS</kind>
         </durability>
 
-        <!-- Keep messages in memory until explicitly replaced -->
+        <!-- Keep all messages in memory -->
         <history>
           <kind>KEEP_ALL_HISTORY_QOS</kind>
         </history>
 
-        <!--how much data to store per instance -->
+        <!-- Limit memory usage but keep it consistent -->
         <resource_limits>
           <max_samples>100</max_samples>
           <max_instances>10</max_instances>
-          <max_samples_per_instance>100</max_samples_per_instance>
+          <max_samples_per_instance>10</max_samples_per_instance>
+          <initial_samples>10</initial_samples>
+          <initial_instances>5</initial_instances>
         </resource_limits>
       </datawriter_qos>
 
