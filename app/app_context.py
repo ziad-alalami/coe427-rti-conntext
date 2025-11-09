@@ -189,7 +189,7 @@ class AppContext:
             # Get any new messages
             msgs_dict = chatter.receive_messages()
             # Update the message cache for this user
-            self.chatters_rcvd_messages[user_id] = self.chatters_rcvd_messages.get(user_id, []).extend(msgs_dict[user_id])
+            self.chatters_rcvd_messages.setdefault(user_id, []).extend(msgs_dict[user_id])
             # Wait before next poll
             time.sleep(TIME_SLEEP)
 
